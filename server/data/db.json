@@ -1,0 +1,86 @@
+{
+  "users": [
+    {
+      "id": "EPPAyLBAIj6rcZMomfyeY",
+      "role": "admin",
+      "email": "admin",
+      "name": "Administrator",
+      "passwordHash": "$2a$10$DwNcLuxD9YFro8xDh/JGye8aiSio58RPqHranccNBoVfYbfGYVCt.",
+      "createdAt": "2025-11-12T13:01:21.647Z",
+      "updatedAt": "2025-11-12T13:01:21.647Z",
+      "level": 1,
+      "exp": 0,
+      "accuracy": 0
+    },
+    {
+      "id": "qweqwewqe",
+      "role": "student",
+      "email": "student@gmail.com",
+      "name": "student",
+      "passwordHash": "$2a$10$WJFwQwx0wQ6nHd6TnZAyTe1uz6VSqwf2w3hFTcEJJYpU96vIN1UBq",
+      "createdAt": "2025-11-12T13:35:38.722Z",
+      "updatedAt": "2025-11-12T13:35:38.722Z",
+      "level": 1,
+      "exp": 0,
+      "accuracy": 0
+    },
+    {
+      "id": "56756756",
+      "role": "teacher",
+      "email": "teacher@gmail.com",
+      "name": "teacher",
+      "passwordHash": "$2a$10$ZoMBszMbXKjK0Q9389MrTO0utuypGIC4UAJC2CHOtXCfA/NZZXWEi",
+      "createdAt": "2025-11-12T13:35:55.018Z",
+      "updatedAt": "2025-11-12T13:35:55.018Z",
+      "level": 1,
+      "exp": 0,
+      "accuracy": 0
+    }
+  ],
+  "quizzes": [],
+  "students": [],
+  "messages": [],
+  "badges": [],
+  "classes": [
+    {
+      "id": "cls_1762954587932",
+      "name": "test",
+      "section": "test",
+      "code": "10EKA2",
+      "teacherId": "56756756",
+      "studentCount": 0
+    }
+  ],
+  "submissions": [],
+  "quizBank": [],
+  "announcements": [
+    {
+      "id": "ann_1762954587979",
+      "title": "New class created",
+      "body": "test - test is now available. Class code: 10EKA2",
+      "senderId": "56756756",
+      "classId": "cls_1762954587932",
+      "date": "2025-11-12T13:36:27.977Z"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "ntf_1762954588042",
+      "title": "Class created",
+      "body": "test - test has been created.",
+      "recipientType": "class",
+      "recipientId": "cls_1762954587932",
+      "createdAt": "2025-11-12T13:36:28.015Z",
+      "createdBy": "56756756",
+      "read": false
+    }
+  ],
+  "classStudents": [
+    {
+      "id": "clsstu_1762954617058",
+      "classId": "cls_1762954587932",
+      "studentId": "qweqwewqe",
+      "joinedAt": "2025-11-12T13:36:57.058Z"
+    }
+  ]
+}
