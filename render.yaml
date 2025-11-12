@@ -1,0 +1,38 @@
+# Deploy both backend (Node/Express + LowDB) and frontend (Vite React) on Render Free
+# 1) Deploy the backend first. After it's live, copy its URL (e.g., https://sciquest-api.onrender.com).
+# 2) Edit the env var VITE_API_BASE in the frontend service below to that URL + '/api' (e.g., https://sciquest-api.onrender.com/api).
+# 3) Deploy the frontend.
+
+services:
+  - type: web
+    name: sciquest-backend
+    env: node
+    plan: free
+    region: singapore
+    rootDir: server
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 4000
+      - key: JWT_SECRET
+        generateValue: true
+      - key: FRONTEND_ORIGINS
+        value: https://YOUR-FRONTEND-DOMAIN   # comma-separate if multiple
+    disk:
+      name: data
+      mountPath: /opt/render/project/src/server/data
+      sizeGB: 1
+
+  - type: static
+    name: sciquest-frontend
+    plan: free
+    region: singapore
+    rootDir: .
+    buildCommand: npm install && npm run build
+    publishPath: dist
+    envVars:
+      - key: VITE_API_BASE
+        value: https://YOUR-BACKEND-DOMAIN/api
