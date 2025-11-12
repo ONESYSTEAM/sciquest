@@ -1,4 +1,4 @@
-# Render Blueprint: Backend (web) + Frontend (static_site)
+# Render Blueprint: Backend + Frontend (both web types for full compatibility)
 services:
   - type: web
     name: sciquest-backend
@@ -16,22 +16,20 @@ services:
       - key: JWT_SECRET
         generateValue: true
       - key: FRONTEND_ORIGINS
-        # After the frontend is live, replace with its URL(s), comma-separated.
         value: https://YOUR-FRONTEND-DOMAIN
     disk:
       name: data
       mountPath: /opt/render/project/src/server/data
       sizeGB: 1
 
-  - type: static_site
+  - type: web
     name: sciquest-frontend
+    env: node
     plan: free
     region: singapore
     rootDir: .
     buildCommand: npm install && npm run build
-    publishPath: dist
+    startCommand: npx serve -s dist -l $PORT
     envVars:
-      # This is available at build time for Vite.
       - key: VITE_API_BASE
-        # Set to your backend url + '/api', e.g. https://sciquest-backend-xxxx.onrender.com/api
         value: https://YOUR-BACKEND-DOMAIN/api
